@@ -29,7 +29,6 @@ The skill enforces strict writing rules on all output:
 - Active voice. Short paragraphs. Plain language.
 - Tables over prose for all structured content.
 - Point-first writing. The sharpest insight leads every section.
-- Target length: 100-150 lines per module. Full run under 700 lines.
 
 ## Installation
 
