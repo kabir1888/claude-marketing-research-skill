@@ -49,7 +49,7 @@ Claude will now automatically detect and use this skill when you request marketi
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/marketing-research-skill.git
+git clone https://github.com/ishwarjha/marketing-research-skill.git
 
 # Copy the skill to your personal skills directory
 cp -r marketing-research-skill/marketing-research ~/.claude/skills/
@@ -60,7 +60,7 @@ cp -r marketing-research-skill/marketing-research ~/.claude/skills/
 ```bash
 mkdir -p ~/.claude/skills/marketing-research
 curl -o ~/.claude/skills/marketing-research/SKILL.md \
-  https://raw.githubusercontent.com/YOUR_USERNAME/marketing-research-skill/main/marketing-research/SKILL.md
+  https://raw.githubusercontent.com/ishwarjha/marketing-research-skill/main/marketing-research/SKILL.md
 ```
 
 **Option 3: Install as a project skill**

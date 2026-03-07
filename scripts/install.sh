@@ -5,7 +5,7 @@
 set -e
 
 SKILL_NAME="marketing-research"
-REPO_URL="https://raw.githubusercontent.com/YOUR_USERNAME/marketing-research-skill/main"
+REPO_URL="https://raw.githubusercontent.com/ishwarjha/marketing-research-skill/main"
 
 # Determine install location
 if [ "$1" = "--project" ]; then
