@@ -1,329 +1,392 @@
 ---
 name: marketing-research
 description: >
-  Use this skill for any marketing research, product positioning, copywriting research, or audience profiling task.
-  Triggers include: "research my product", "develop my value proposition", "profile my avatar", "understand my market",
-  "create a unique mechanism", "market awareness", "market sophistication", "ideal customer profile", "ICP research",
-  "positioning research", "copywriting research", "features and benefits", "competitor research", "competitive analysis",
-  or any request to deeply research a product or audience for marketing purposes. Use this skill proactively whenever
-  a user wants to prepare materials for sales copy, landing pages, ads, email sequences, or any persuasion-focused
-  content. If a user says "help me understand my market", "I need to figure out my messaging", "who is my customer",
-  or "what makes my product different", this skill applies immediately.
+  Use this skill for B2B marketing research, product positioning, competitive analysis, buyer and buying-committee profiling,
+  ICP research, value propositions, business cases, and messaging. Also covers pharma, biotech and medical device commercial
+  positioning: HCP, payer and patient stakeholders, therapeutic landscapes, positioning statements and claims grounded in evidence.
+  Triggers include "research my product", "competitive analysis", "ICP research", "buying committee", "positioning research",
+  "value proposition", "messaging framework", "business case", "brand positioning", "launch positioning", "HCP messaging",
+  "payer value story", or any request to research a product, market or audience before writing sales, marketing or launch content.
+  Use proactively when a user is preparing a sales deck, landing page, campaign, launch plan or analyst briefing.
 ---
 
-# Marketing Research Sourcebook
+# B2B Marketing Research Sourcebook
 
-A structured, practitioner-grade research system for products, avatars, markets, competitors, and positioning.
+A structured research system for B2B products and pharma commercial positioning. It maps competitors, the buying committee, the market, and the case for change, then turns them into positioning and messaging.
+
+Two tracks share this file:
+
+| Track | Use when | Instructions |
+| ----- | -------- | ------------ |
+| **B2B** | Software, services, data, platforms, industrial or any product sold to organizations | This file, Modules 0 to 5 |
+| **Pharma commercial** | A drug, biologic, vaccine, diagnostic or medical device, or a brand team's launch or lifecycle positioning | Read `references/pharma-commercial.md` and follow it. It replaces Modules 0 to 5 with Modules P0 to P5 and keeps the writing rules and intake below. |
+
+If the product is health-related but sold to organizations as software or services, such as a commercial analytics platform sold to pharma companies, use the B2B track with pharma companies as the buyer.
 
 ---
 
 ## WRITING RULES (Apply to Every Module)
 
-These rules govern ALL output. Follow them without exception.
-
 **Style:**
-1. Never use em dashes. Use periods, commas, colons, or separate sentences instead.
-2. Minimize parenthetical content. If something matters, give it a full sentence. If it does not matter, cut it.
-3. Write in active voice. Short paragraphs. Plain language. No hedging.
-4. Lead every section with the sharpest insight, not setup or context. Put the point first.
-5. Each sentence should earn its place. Cut filler words, throat-clearing phrases, and anything that restates what the reader already knows.
-6. Use "not X, but Y" constructions sparingly. Once per section at most.
+
+1. Never use em dashes. Use periods, commas, colons, or separate sentences.
+2. Minimize parenthetical content. If it matters, give it a sentence. If not, cut it.
+3. Active voice. Short paragraphs. Plain language. No hedging.
+4. Lead every section with the sharpest insight. Put the point first.
+5. Every sentence earns its place. Cut filler and anything the reader already knows.
+6. Write for skeptical professional buyers. Specific beats clever. Numbers beat adjectives.
+7. Never invent statistics, customer names, quotes or study results. Mark estimates as estimates and say what they rest on.
 
 **Structure:**
-7. Tables over prose. Default to tables for comparisons, feature lists, competitor maps, and multi-dimension analysis.
-8. One paragraph max per competitor in landscape maps.
-9. Dimensionalized benefits: 3-4 sentences. One vivid scenario, not a narrative.
-10. No "Chain-Forward Summary" sections. Context carries forward internally.
-11. Mechanism stories: 1 short paragraph setup + 1 short paragraph outcome.
-12. Value propositions stay full-length. These are copy assets.
-13. Mental model reframes: 1 example per model. Pick the strongest.
-14. Target module length: 100-150 lines. Full run approximately 600-700 lines total.
-15. Use web search for competitor research. Pull current data.
-16. Deliver each module as a single markdown file.
+
+8. Tables over prose for comparisons, feature lists, stakeholder maps and multi-dimension analysis.
+9. One paragraph max per competitor in landscape maps.
+10. Value propositions stay full-length. They are copy assets.
+11. Target module length: 100 to 150 lines.
+12. Use web search for competitor, analyst and market research. Pull current data and cite sources.
+13. Deliver each module as a single markdown document.
 
 ---
 
 ## STEP 0: INTAKE INTERVIEW (Always Start Here)
 
-Ask all questions at once:
+Ask all questions at once. Skip any the user already answered.
 
 ```
 Before we dive in, I need a few details:
 
-1. What is your product? Short description: what it is, what it does, who it serves.
-2. What are the main components, features, or chapters?
-3. Who is your ideal customer? Their role, situation, and what they want.
-4. Do you have any named competitors? Even 2-3 is enough.
-5. What stage are you at?
-   a) Just starting. Need everything.
-   b) Have a product defined. Need avatar and market research.
-   c) Have avatar research done. Need positioning and copy angles.
-   d) Have everything. Need a competitor comparison.
+1. What is the product? What it is, what it does, and who buys it.
+2. What are the main capabilities, components or modules?
+3. Who buys it? Industry, company size, and the roles involved in the decision.
+4. How is it sold? Typical deal size, sales cycle, and motion
+   (self-serve, product-led, inside sales, field sales, channel).
+5. Who do you lose deals to? Name 2 to 4 competitors. Include "do nothing",
+   in-house builds, or spreadsheets if those are real alternatives.
+6. What stage are you at?
+   a) Starting from scratch. Need everything.
+   b) Product defined. Need buyer and market research.
+   c) Buyer research done. Need positioning and messaging.
+   d) Need a competitor comparison only.
 ```
 
-Store answers as the **Research Context Block** and reference throughout. Never re-ask captured information.
+If the product is a therapy, diagnostic or device, use the pharma intake in `references/pharma-commercial.md` instead.
+
+Store answers as the **Research Context Block**. Never re-ask captured information.
 
 ---
 
 ## STEP 1: DIAGNOSTIC
 
 | Stage | Module Sequence |
-|-------|----------------|
-| Need everything | 0, 1, 2, 3, 4 |
-| Have product, need avatar + market | 2, 3, 4 |
-| Have avatar, need positioning | 4, 5 |
-| Need competitor comparison | 0, 4 |
+| ----- | --------------- |
+| Need everything | 0, 1, 2, 3, 4, 5 |
+| Have product, need buyer and market | 2, 3, 4 |
+| Have buyer research, need positioning | 4, 5 |
+| Need competitor comparison | 0 |
 
 Tell the user which module you are starting with and why. Then proceed.
 
 ---
 
-## MODULE 0: COMPETITOR RESEARCH
+## MODULE 0: COMPETITIVE LANDSCAPE
 
-*Goal: Map what is already promised, already heard, and where the gap is.*
+*Goal: Map what buyers already hear, where every vendor sounds the same, and where the open ground is.*
 
-Use web search to pull current competitor data.
+Use web search for current data: vendor sites, pricing pages, analyst coverage such as Gartner or Forrester, review sites such as G2 and TrustRadius, and recent funding or product news.
 
 ### Competitor Landscape Map
 
-For each competitor, deliver a **single table row**:
+| Competitor | Core Promise | Category They Claim | Primary Buyer | Pricing Model | Proof They Lead With | Positioning Gap |
+| ---------- | ------------ | ------------------- | ------------- | ------------- | -------------------- | --------------- |
 
-| Competitor | Core Promise | Unique Mechanism | Target Avatar | Sophistication Level (1-5) | Positioning Gap |
-|------------|-------------|-----------------|---------------|---------------------------|-----------------|
+Include the status quo as a row: "do nothing", spreadsheets, an incumbent suite, or an in-house build. In B2B it is often the strongest competitor.
 
-Below the table, add **one paragraph per competitor** expanding on the most strategically important gap. Then list 2-3 **saturated claims** the market has already heard too many times.
+Below the table, one paragraph per competitor on the most exploitable gap. Then list 3 to 5 **saturated claims** buyers have stopped believing, such as "single pane of glass", "AI-powered" or "seamless integration".
 
 ### Competitive Gap Analysis
 
-Four concise sections. Use tables or short bullets, not paragraphs:
-1. **Overcrowded angles**: what everyone is saying. 3-5 items, one line each.
-2. **Underserved desires**: what no one addresses well. 3-5 items, one line each.
-3. **Open positioning territories**: 3 territories, each described in 2-3 sentences.
-4. **Most underserved sophistication level**: which level and why, in one paragraph.
+1. **Overcrowded angles:** what everyone says. 3 to 5 items, one line each.
+2. **Underserved buyer needs:** what no one addresses well, especially for roles other than the end user. 3 to 5 items.
+3. **Open positioning territories:** 3 territories, 2 to 3 sentences each.
+4. **Why deals stall:** the 3 most common reasons buyers delay or choose the status quo, from reviews, forums and analyst notes.
 
 ### Differentiation Pressure Test
 
-Deliver as a table plus brief commentary:
-
 | Dimension | Competitors (consensus) | Our Product (potential) |
-|-----------|------------------------|----------------------|
+| --------- | ----------------------- | ----------------------- |
 
-Then answer bluntly in 1-2 paragraphs: Does the product sound like anyone else? Where is it genuinely different? What stops a Level-4 buyer mid-scroll?
+Dimensions to consider: time to value, implementation effort, integration depth, total cost of ownership, security and compliance, vertical depth, service model, proof and references.
+
+Then answer bluntly in 1 to 2 paragraphs: Does the product sound like anyone else? Where is it actually different? What would make a skeptical evaluator put it on the shortlist?
 
 ### Competitor Comparison Table
 
-Close Module 0 with:
+| Competitor | Core Claim | Strength | Weakness | Where We Win | Where We Lose |
+| ---------- | ---------- | -------- | -------- | ------------ | ------------- |
 
-| Competitor | Core Claim | Unique Mechanism | Soph. Level | Gap/Weakness | How We Are Different |
-|------------|-----------|-----------------|-------------|--------------|---------------------|
-
-Include a final row for our product.
+Include a final row for our product. "Where we lose" must be honest. Sales teams need it for qualification.
 
 ---
 
-## MODULE 1: PRODUCT
+## MODULE 1: PRODUCT AND DIFFERENTIATED VALUE
 
-*Goal: Uncover features, benefits, and a Unique Mechanism differentiated from competitors.*
+*Goal: Translate capabilities into business outcomes and name the approach that sets the product apart.*
 
-Reference competitive gaps from Module 0. The mechanism must occupy territory competitors are NOT claiming.
+Reference the gaps from Module 0. The differentiated approach must occupy ground competitors are not claiming.
 
-### Features, Benefits, Dimensionalize
+### Capability to Value Map
 
-Deliver **directly as a table**:
+| Capability | Problem Solved | Business Outcome | Metric It Moves | Who Cares Most |
+| ---------- | -------------- | ---------------- | --------------- | -------------- |
 
-| Feature | Problem Solved | Benefit | Dimensionalized Benefit (3-4 sentences) |
-|---------|---------------|---------|----------------------------------------|
+"Metric It Moves" names a real KPI: revenue, cost, cycle time, risk exposure, headcount hours, error rate, compliance findings. "Who Cares Most" names a buying-committee role.
 
-### Unique Mechanism
+### Differentiated Approach
 
-For each feature, describe how it works step-by-step: problem, actions, new outcomes. **One concise paragraph per feature.** Avoid anything competitors already claim.
+Describe how the product solves the problem differently, step by step: the old way, what changes, the new outcome. One concise paragraph per major capability. Avoid what competitors already claim.
 
-### Name the Unique Mechanism
+### Name the Approach
 
-Generate 15-20 names grouped by 3-4 themes:
+Generate 12 to 15 names for the approach, grouped by 3 themes. B2B names should sound credible in a boardroom and an analyst briefing, not gimmicky.
 
 | Theme | Name Options |
-|-------|-------------|
+| ----- | ------------ |
 
-### Mechanism with Story
+### Proof Inventory
 
-For the chosen mechanism: **1 paragraph** on how it works. **1 paragraph** on a real-world before/during/after scenario.
+| Claim | Proof Available Today | Proof Type | Gap to Close |
+| ----- | --------------------- | ---------- | ------------ |
 
-**On request:** Expand a specific mechanism with product detail. Generate 10 additional names. Refine names toward a specific style.
+Proof types: customer metric, case study, reference customer, analyst mention, benchmark, certification, third-party study. Flag every claim that has no proof yet.
 
 ---
 
-## MODULE 2: AVATAR
+## MODULE 2: BUYING COMMITTEE AND ICP
 
-*Goal: Build a deep emotional and psychological profile of your ideal buyer.*
+*Goal: Profile the organizations that buy and the people who decide.*
 
-### Primary Desires (6)
+### Ideal Customer Profile
 
-List 6 deep emotional and psychological desires. Each: **name + 2-3 sentence description**. Go beyond surface wants. Uncover identity-level drives.
+| Attribute | Best-Fit Account | Poor-Fit Account |
+| --------- | ---------------- | ---------------- |
+| Industry and segment | | |
+| Company size and revenue | | |
+| Technology environment | | |
+| Maturity or operating model | | |
+| Trigger events | | |
+| Budget owner | | |
 
-### Primary Problems (6)
+Trigger events are the moments that open a buying window: new leadership, a failed audit, a merger, a funding round, a contract renewal, a regulation taking effect, a missed target.
 
-List 6 problems. Mix external frustrations with internal fears. Each: **name + 2-3 sentence description**.
+### Buying Committee Map
 
-**On request:** Expand one problem in depth. First-person rewrite as a spouse conversation and midnight journal entry. Refine a desire for financial freedom angle.
+| Role | Typical Title | What They Own | What They Fear | What Wins Them | Veto Power |
+| ---- | ------------- | ------------- | -------------- | -------------- | ---------- |
+| Economic buyer | | | | | |
+| Champion | | | | | |
+| End users | | | | | |
+| Technical evaluator | | | | | |
+| Procurement and legal | | | | | |
+| Security or compliance | | | | | |
+| Likely blocker | | | | | |
+
+Drop roles that do not apply. Add any that do.
+
+### Champion Deep Dive
+
+The champion carries the deal internally. Profile them in depth:
+
+- **Career stakes:** 3 bullets on what they gain or risk personally by backing this purchase.
+- **Desires:** 4 desires, each a name plus 2 sentences. Include professional identity: being seen as the one who modernized the function.
+- **Problems:** 4 problems, each a name plus 2 sentences. Mix operational pain with political pain.
+- **What they need from us:** the materials that let them sell internally, such as a business case, a security pack, a reference call or an ROI model.
 
 ### Primary Conflict
 
-One paragraph. Express the tension between the top desire and the top problem. What is in the way? What have they tried? What does the internal struggle sound like?
+One paragraph. The tension between what the champion wants and what the organization resists. What has been tried? Who pushes back and why? What does inaction cost?
 
-### Master Avatar
+### Buyer Reality Grid
 
-Deliver as a **single structured table**:
+| Category | Champion | Economic Buyer | End Users |
+| -------- | -------- | -------------- | --------- |
+| Today without the product | | | |
+| After the product | | | |
+| What they say internally | | | |
+| What they hear from leadership | | | |
+| What they try that does not work | | | |
+| Objections they raise | | | |
 
-| Category | Emotional Detail | Logical/Practical Detail |
-|----------|-----------------|-------------------------|
-| Hell (without product) | | |
-| Heaven (with product) | | |
-| Pains (fears, frustrations) | | |
-| Gains (wants, hopes, dreams) | | |
-| See (marketplace, competitors, peers) | | |
-| Say (to self, team, spouse) | | |
-| Hear (from board, team, vendors, inner voice) | | |
-| Do (what is not working, making it worse) | | |
-
-Each cell: 3-5 bullet points. Concise, specific, visceral.
+Each cell: 2 to 4 bullets. Concise and specific.
 
 ---
 
-## MODULE 3: MARKET
+## MODULE 3: MARKET AND BUYING JOURNEY
 
-*Goal: Map where your avatar sits on Awareness and Sophistication spectrums.*
+*Goal: Place the market on the awareness and sophistication spectrums and map how a deal moves.*
 
-Use competitor sophistication levels from Module 0 to calibrate.
+Use the sophistication of competitor claims from Module 0 to calibrate.
 
 ### State of Awareness
 
-Deliver as a **table** using first-person language throughout:
+Use the champion's voice in first person.
 
-| Awareness Stage | Emotional State (2-3 bullets) | Logical State (2-3 bullets) | What Moves Them Forward (1 sentence) |
-|----------------|------------------------------|----------------------------|--------------------------------------|
+| Awareness Stage | What They Think | What They Search For or Ask Peers | What Moves Them Forward |
+| --------------- | --------------- | --------------------------------- | ----------------------- |
 | Unaware | | | |
-| Problem-Aware | | | |
-| Solution-Aware | | | |
-| Product-Aware | | | |
-| Most-Aware | | | |
+| Problem-aware | | | |
+| Solution-aware | | | |
+| Vendor-aware | | | |
+| Ready to buy | | | |
 
 ### State of Sophistication
 
-Deliver as a **table**:
+| State | What Buyers Have Heard | 3 Claims That Still Land |
+| ----- | ---------------------- | ------------------------ |
+| 1. New category | Simple, direct promise | |
+| 2. Growing category | Bigger, measurable promise | |
+| 3. Crowded | A new approach they have not seen | |
+| 4. Skeptical | Proof, speed to value, lower risk | |
+| 5. Commoditized | A new category or a new identity for the buyer | |
 
-| State | Description | 3 Claims That Land |
-|-------|------------|-------------------|
-| 1. First exposure | Simple, direct, bold | |
-| 2. Early awareness | Dramatized, bigger | |
-| 3. Jaded | New mechanism they have not seen | |
-| 4. Burned | Faster, easier, more certain. Solves what past tools missed. | |
-| 5. Checked out | New identity, not a better version | |
+Close with one paragraph naming the primary sophistication level and why.
 
-Close with one paragraph naming the primary sophistication target and why.
+### Buying Journey
+
+| Stage | Buyer Activity | Committee Members Involved | Content and Proof Needed | Common Stall Point |
+| ----- | -------------- | -------------------------- | ------------------------ | ------------------ |
+| Trigger and problem framing | | | | |
+| Solution exploration | | | | |
+| Requirements and shortlist | | | | |
+| Evaluation and proof | | | | |
+| Business case and approval | | | | |
+| Procurement, legal and security | | | | |
+| Onboarding and expansion | | | | |
 
 ---
 
-## MODULE 4: VALUE PROPOSITION
+## MODULE 4: VALUE PROPOSITION AND BUSINESS CASE
 
-*Goal: Synthesize everything into 4 positioning statements. Emotionally resonant, logically sound, competitor-differentiated.*
+*Goal: Write the positioning, the role-specific value propositions, and the business case a champion can take to the CFO.*
 
-Inputs needed from prior modules: Unique Mechanism, Primary Conflict, Competitive gaps, Avatar's deepest desire and deepest pain.
+Inputs from prior modules: differentiated approach, primary conflict, competitive gaps, buying committee, proof inventory.
 
-### Value Proposition Development
+### Positioning Statement
+
+```
+For [ICP and trigger situation],
+who [primary need or pain],
+[Product] is the [category or frame of reference]
+that [key differentiated benefit].
+Unlike [primary alternative, including the status quo],
+we [proof-backed point of difference].
+```
+
+Write 2 versions: one claiming an existing category, one creating or reframing a category. Recommend one in a sentence.
+
+### Value Propositions
 
 Write 4 value propositions. Each must:
-1. Speak to the avatar's primary desire or pain
-2. Reference the unique mechanism specifically
-3. Sound nothing like what competitors are saying
-4. Be detailed, specific, and emotionally resonant. Not a tagline.
 
-**These are copy assets. Keep them full-length. One paragraph each. Do not compress.**
+1. Speak to a specific buying-committee role's main pain or goal.
+2. Reference the differentiated approach.
+3. Sound nothing like competitors.
+4. Name a business outcome and, where proof exists, a metric.
 
-After the 4 VPs, add a summary table:
+**Keep them full-length. One paragraph each.**
 
-| VP# | Name | Core Hook | Best Used For |
-|-----|------|-----------|---------------|
-| 1 | | | Homepage / Hero |
-| 2 | | | Product Page |
-| 3 | | | Sales Deck |
-| 4 | | | Thought Leadership |
+| VP# | Name | Target Role | Core Hook | Best Used For |
+| --- | ---- | ----------- | --------- | ------------- |
+| 1 | | Economic buyer | | Exec summary, homepage hero |
+| 2 | | Champion | | Sales deck, discovery |
+| 3 | | End users | | Product pages, demos |
+| 4 | | Technical or security | | Evaluation guide, RFP answers |
 
-**On request:** Conflict-led rewrites. Component-specific zoom for a single feature.
+### Business Case Skeleton
+
+| Value Driver | Baseline Metric | Expected Improvement | Assumption It Rests On | Annual Value |
+| ------------ | --------------- | -------------------- | ---------------------- | ------------ |
+
+Add a short section on cost of inaction, implementation cost and time, and payback period. Mark every number as an estimate unless the user supplied it.
+
+### Objection Handling Matrix
+
+| Objection | Who Raises It | What Is Really Behind It | Response | Proof to Use |
+| --------- | ------------- | ------------------------ | -------- | ------------ |
+
+Cover at least: "we can build this ourselves", "we already have a tool for that", "not a priority this year", "too risky to switch", "too expensive", and a security or data concern.
 
 ---
 
-## MODULE 5: MENTAL MODELS
+## MODULE 5: STRATEGIC LENSES
 
-*Goal: Reframe research outputs through psychological and strategic lenses for fresh copy angles.*
+*Goal: Reframe the research through B2B decision-making lenses to find fresh messaging angles.*
 
-Apply to any output from Modules 0-4. Pick the 3-4 most relevant models, not all 15. For each model used, provide **1 specific copy or messaging example**.
+Pick the 3 to 4 most relevant lenses. For each, give one specific messaging example.
 
-### Mental Model Library
+**Risk and status quo:**
 
-**Emotion-based:**
-- **Jealousy Tendency**: What do they see others achieving?
-- **Loss Aversion**: What are they losing every day without this?
-- **Identity Threat**: How does the problem threaten who they believe they are?
-- **Social Proof Cascade**: How does others' success make them feel left behind?
+- **Status quo bias:** Make the cost of staying put concrete and current.
+- **Career risk:** Make backing this purchase the safe career choice.
+- **Loss aversion:** What revenue, time or exposure is lost every quarter without it?
+- **Second-order thinking:** What happens in 12 months if the problem stays unsolved?
 
-**Logic-based:**
-- **Inversion**: What guarantees failure? Position product as the antidote.
-- **First Principles**: Strip assumptions. What is the core truth?
-- **Second-Order Thinking**: What happens in 6 months if unsolved?
-- **Opportunity Cost**: What are they giving up by not solving this now?
+**Consensus and proof:**
+
+- **Peer proof:** What similar companies are already doing.
+- **Consensus building:** What each committee member needs to say yes.
+- **Analyst and third-party validation:** Borrowed credibility.
 
 **Positioning:**
-- **Category Creation**: New category, not a better version of existing?
-- **Jobs To Be Done**: What job are they actually hiring this to do?
-- **The Challenger Sale**: Teach something new, then position as logical next step.
-- **Blue Ocean**: What can be eliminated or reduced? What new factors introduced?
+
+- **Category design:** A new category instead of a better version of an old one.
+- **Jobs to be done:** The job the organization is hiring this to do.
+- **Challenger insight:** Teach a reframe the buyer has not considered, then lead to the product.
+- **Blue ocean:** What to eliminate, reduce, raise and create versus the category.
 
 **Narrative:**
-- **The Hero's Journey**: Avatar as hero, product as guide.
-- **Before/After/Bridge**: Vivid before, aspirational after, product as bridge.
-- **Enemy Framing**: Name the external enemy so failure is not their fault.
 
-### Output Format
+- **Before, after, bridge:** Concrete before, measurable after, product as the bridge.
+- **Enemy framing:** Name the outdated practice or market shift as the enemy, not the buyer.
+- **Strategic narrative:** A big change in the world, winners and losers, the promised land, how to get there.
 
-Deliver as a table:
+| Lens | Reframed Angle | Messaging Example |
+| ---- | -------------- | ----------------- |
 
-| Mental Model | Reframed Angle | Copy/Messaging Example |
-|-------------|---------------|----------------------|
-
-Close with: **Top 3 Priority Angles**. One sentence each naming the angle and where to use it.
+Close with **Top 3 Priority Angles**: one sentence each naming the angle and where to use it.
 
 ---
 
 ## OUTPUT TEMPLATES
 
-Generate these after completing the relevant modules.
+### Buyer Profile (after Module 2)
 
-### Avatar Profile (after Module 2)
+One page: ICP in 3 bullets, top trigger events, buying committee summary table, champion's top 3 desires and problems, primary conflict in one paragraph, top 5 objections, 5 to 7 phrases buyers actually use, awareness and sophistication level.
 
-Single-page structured profile: Avatar name, one-sentence description, top 3 desires, top 3 problems, primary conflict in one paragraph, heaven state in 3 bullets, hell state in 3 bullets, key language patterns as 5-7 phrases, awareness level, sophistication level.
+### Positioning Canvas (after Modules 0, 1 and 4)
 
-### Positioning Canvas (after Modules 0, 1, 4)
+One page: product, positioning statement, differentiated approach with name and one sentence, primary competitive gap, sophistication target, 4 value propositions in one line each, top 3 messaging angles, proof gaps to close, and one ownable sentence no competitor says.
 
-Single-page structured brief: Product name, Unique Mechanism as name plus one sentence, primary competitive gap, sophistication target with rationale, 4 value propositions in one line each, top 3 copy angles, one ownable sentence no competitor is saying.
+### Messaging House (after Module 4)
 
-### Competitor Comparison Table (after Module 0)
-
-Included as part of Module 0 output.
+| Level | Content |
+| ----- | ------- |
+| Roof: core message | One sentence |
+| Pillar 1, 2, 3 | Headline and 2 supporting points each |
+| Foundation: proof | Metrics, customers, analysts, certifications |
 
 ---
 
 ## FULL RESEARCH RUN
 
 | Step | Module | Output |
-|------|--------|--------|
-| 1 | Intake Interview | Research Context Block |
-| 2 | Module 0: Competitor Research | Landscape map + gap analysis + pressure test + comparison table |
-| 3 | Module 1: Product | Feature/benefit table + Unique Mechanism name + story |
-| 4 | Module 2: Avatar | Master avatar table + conflict statement |
-| 5 | Module 3: Market | Awareness table + Sophistication table + target |
-| 6 | Module 4: Value Proposition | 4 VPs + usage matrix |
-| 7 | Module 5: Mental Models | 3-4 reframes + top 3 priority angles |
-| 8 | Output Templates | Avatar Profile + Positioning Canvas |
+| ---- | ------ | ------ |
+| 1 | Intake | Research Context Block |
+| 2 | Module 0: Competitive Landscape | Landscape map, gap analysis, pressure test, comparison table |
+| 3 | Module 1: Product | Capability to value map, named approach, proof inventory |
+| 4 | Module 2: Buying Committee | ICP, committee map, champion deep dive, reality grid |
+| 5 | Module 3: Market | Awareness, sophistication, buying journey |
+| 6 | Module 4: Value | Positioning statement, 4 VPs, business case, objection matrix |
+| 7 | Module 5: Lenses | 3 to 4 reframes, top 3 angles |
+| 8 | Output Templates | Buyer Profile, Positioning Canvas, Messaging House |
 
 Each module feeds the next. Never skip the intake.

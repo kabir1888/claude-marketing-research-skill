@@ -1,38 +1,43 @@
-# Sample Output: SaaS Product Marketing Research
+# Sample Output: B2B Marketing Research
 
-This is an abbreviated example of what a full research run produces. Your actual output will be tailored to your specific product, competitors, and avatar.
+An abbreviated example of a B2B run. The product, customers and numbers are fictional. Real output is tailored to your product and cites its sources.
 
 ---
 
 ## Research Context
 
 | Field | Detail |
-|-------|--------|
-| **Product** | ExampleApp. AI-powered project management for remote teams. |
-| **Features** | Smart task prioritization, async collaboration hub, team health dashboard |
-| **Avatar** | Engineering managers at Series B-D startups struggling with remote team coordination |
-| **Competitors** | Asana, Linear, Monday.com |
+| ----- | ------ |
+| **Product** | SignalOps. Monitoring for digital analytics data quality. Catches broken tags and metric anomalies before they reach dashboards. |
+| **Capabilities** | Tag validation, anomaly detection on KPIs, lineage from tag to dashboard, alert routing |
+| **Buyers** | Enterprise companies with large web properties. Head of Digital Analytics, VP Marketing, data engineering |
+| **Motion** | Field sales, 3 to 6 month cycle, mid five-figure to low six-figure annual contracts |
+| **Competitors** | Tag auditing tools, observability platforms, manual QA and spreadsheets |
 
 ---
 
-## Module 0: Competitor Landscape Map (excerpt)
+## Module 0: Competitive Landscape (excerpt)
 
 | Competitor | Core Promise | Positioning Gap |
-|------------|-------------|-----------------|
-| Asana | "Work management for teams" | No AI-native prioritization. Generic across industries. |
-| Linear | "The issue tracker built for speed" | Developer-focused. Ignores manager-level visibility needs. |
-| Monday.com | "Work OS" | Broad and shallow. No depth for engineering workflows. |
+| ---------- | ------------ | --------------- |
+| Tag auditing tools | Scan your site for broken tags | Find tag errors, not the business impact on KPIs |
+| Data observability platforms | Monitor your data warehouse | Start at the warehouse, miss problems at collection |
+| Manual QA and spreadsheets | Free and familiar | Breaks at scale. Errors surface after leadership sees the numbers |
 
-## Module 1: Unique Mechanism (excerpt)
+**Strongest competitor:** the status quo. Most teams find data issues when an executive questions a dashboard.
 
-**Recommended name: The Priority Engine**
+## Module 2: Buying Committee (excerpt)
 
-How it works: AI analyzes task dependencies, team velocity patterns, and deadline pressure to recommend daily priorities for each team member. Managers see a real-time confidence score for sprint completion.
+| Role | What They Fear | What Wins Them |
+| ---- | -------------- | -------------- |
+| Head of Digital Analytics (champion) | Presenting a wrong number to the CMO | Catching issues before stakeholders do |
+| VP Marketing (economic buyer) | Budget decisions made on bad data | Confidence in reported pipeline and ROI |
+| Data engineering (technical evaluator) | Another tool to maintain | Low setup effort, fits existing stack |
 
-## Module 4: Value Proposition (excerpt)
+## Module 4: Positioning Statement (excerpt)
 
-**VP1:** "Your team ships 47 tasks this sprint. Three of them actually matter. The Priority Engine finds the three."
+For enterprise analytics teams whose dashboards drive budget decisions, SignalOps is the data quality layer for digital analytics that catches broken tracking before it reaches a report. Unlike tag scanners and warehouse monitors, it traces each issue from the tag to the KPI it affects, so teams fix what matters first.
 
 ---
 
-*This is a shortened sample. A full run produces approximately 300-350 lines covering all eight deliverables.*
+*Shortened sample. A full run covers all modules and output templates.*

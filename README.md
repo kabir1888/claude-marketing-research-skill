@@ -1,176 +1,104 @@
-# Marketing Research Skill for Claude
+# B2B and Pharma Commercial Marketing Research Skill for Claude
 
-A structured, practitioner-grade marketing research system that runs inside Claude. Covers competitor analysis, product positioning, avatar profiling, market awareness mapping, value proposition development, and mental model reframing.
+A structured marketing research system that runs inside Claude, with two tracks:
 
-Built for founders, marketers, and copywriters who need deep research before writing a single word of copy.
+- **B2B:** competitive landscape, buying committee and ICP, buying journey, positioning statement, role-based value propositions, business case and objection handling.
+- **Pharma commercial:** therapeutic landscape, target product profile, HCP, payer and patient stakeholders, patient flow, brand positioning statement, messaging hierarchy, and a compliance pre-check that keeps claims on label.
 
-## What This Skill Does
+Forked from [ishwarjha/claude-marketing-research-skill](https://github.com/ishwarjha/claude-marketing-research-skill), which targets direct-response copywriting. This fork reworks it for products sold to organizations and adds the pharma track.
 
-When installed, Claude automatically loads this skill whenever you say things like "research my product," "profile my avatar," "competitor analysis," or "develop my value proposition."
+## What It Does
 
-The skill runs you through a structured sequence:
+Claude loads the skill when you ask for things like "research my product", "competitive analysis", "ICP research", "map the buying committee", "build a business case", "brand positioning for our launch" or "HCP messaging".
 
-| Module | What It Produces |
-|--------|-----------------|
-| **Module 0: Competitor Research** | Landscape map, gap analysis, differentiation pressure test, comparison table |
-| **Module 1: Product** | Feature/benefit table, Unique Mechanism name and story |
-| **Module 2: Avatar** | 6 desires, 6 problems, primary conflict, master avatar table |
-| **Module 3: Market** | Awareness stage table, sophistication claims table, primary target |
-| **Module 4: Value Proposition** | 4 full-length value propositions with usage matrix |
-| **Module 5: Mental Models** | 3-4 psychological/strategic reframes with priority copy angles |
-| **Output Templates** | Avatar Profile, Positioning Canvas, Competitor Comparison Table |
+It starts with an intake interview, picks the track, then runs the modules that fit your stage.
 
-## Writing Quality
+### B2B Track
 
-The skill enforces strict writing rules on all output:
+| Module | Output |
+| ------ | ------ |
+| **0: Competitive Landscape** | Landscape map including the status quo, gap analysis, pressure test, win and loss comparison |
+| **1: Product and Value** | Capability to business outcome map, named approach, proof inventory |
+| **2: Buying Committee and ICP** | ICP and trigger events, committee map, champion deep dive, buyer reality grid |
+| **3: Market and Buying Journey** | Awareness and sophistication tables, journey with stall points |
+| **4: Value and Business Case** | Positioning statement, 4 role-based value propositions, business case skeleton, objection matrix |
+| **5: Strategic Lenses** | Status quo, career risk, consensus, category design and other B2B reframes |
+| **Templates** | Buyer Profile, Positioning Canvas, Messaging House |
 
-- Zero em dashes. Periods, commas, and colons instead.
-- Zero parenthetical asides. If it matters, it gets a sentence. If not, it gets cut.
-- Active voice. Short paragraphs. Plain language.
-- Tables over prose for all structured content.
-- Point-first writing. The sharpest insight leads every section.
+### Pharma Commercial Track
+
+| Module | Output |
+| ------ | ------ |
+| **P0: Therapeutic Landscape** | Treatment paradigm, competitor map, pipeline threats, unmet needs |
+| **P1: Product Differentiation** | Target product profile comparison, differentiator to claim map, mechanism story |
+| **P2: Stakeholders** | Stakeholder map, HCP segmentation, payer value story, patient journey |
+| **P3: Market and Adoption** | Patient flow funnel, adoption stages, analog launches, KPI framework |
+| **P4: Positioning and Messaging** | Brand positioning statement, messaging hierarchy by audience, objection handling |
+| **P5: Compliance and Lenses** | Claim-by-claim compliance pre-check, compliant strategic angles |
+| **Templates** | Brand Positioning Canvas, Competitive Brief, Launch Readiness Questions |
+
+The pharma track never invents clinical data, flags comparative and off-label claims, and marks all output as a draft for medical, legal and regulatory review. It supports strategy work and is not regulatory or legal advice.
+
+## Writing Rules
+
+- No em dashes. Minimal parentheticals. Active voice, short paragraphs.
+- Tables over prose for structured content.
+- Point first. Numbers over adjectives.
+- No invented statistics, customers or study results. Estimates are labeled.
 
 ## Installation
 
-### Claude.ai (Web / Mobile / Desktop)
+### Claude.ai
 
-1. Download the `marketing-research.skill` file from [Releases](../../releases)
-2. Go to **Settings > Capabilities** and enable **Code execution and file creation**
-3. Go to **Customize > Skills**
-4. Click the upload button and select the `.skill` file
-5. Toggle it on
+1. Build the package: `zip -r marketing-research.skill marketing-research/` from the repo root, or download it from Releases if one is published.
+2. In Claude, open **Settings > Capabilities** and make sure code execution and file creation is on.
+3. Open the Skills settings, upload the `.skill` file, and turn it on.
 
-Claude will now automatically detect and use this skill when you request marketing research.
-
-### Claude Code (Terminal)
-
-**Option 1: Install from this repository**
+### Claude Code
 
 ```bash
-# Clone the repo
-git clone https://github.com/ishwarjha/marketing-research-skill.git
-
-# Copy the skill to your personal skills directory
-cp -r marketing-research-skill/marketing-research ~/.claude/skills/
+git clone https://github.com/kabir1888/claude-marketing-research-skill.git
+cp -r claude-marketing-research-skill/marketing-research ~/.claude/skills/
 ```
 
-**Option 2: Install directly**
+Or use the install script:
 
 ```bash
-mkdir -p ~/.claude/skills/marketing-research
-curl -o ~/.claude/skills/marketing-research/SKILL.md \
-  https://raw.githubusercontent.com/ishwarjha/marketing-research-skill/main/marketing-research/SKILL.md
+curl -fsSL https://raw.githubusercontent.com/kabir1888/claude-marketing-research-skill/main/scripts/install.sh | bash
 ```
 
-**Option 3: Install as a project skill**
-
-```bash
-cd your-project
-mkdir -p .claude/skills/marketing-research
-cp /path/to/marketing-research/SKILL.md .claude/skills/marketing-research/
-```
-
-### Manual Paste
-
-If you do not want to install the skill, copy the contents of `marketing-research/SKILL.md` and paste it at the start of any Claude conversation as instructions.
+Add `--project` when running the script locally to install into `.claude/skills/` in the current project.
 
 ## Usage
 
-Start a new conversation and say any of these:
-
-- "Research my product"
-- "Run a full marketing research"
-- "Do a competitor analysis for my product"
-- "Profile my ideal customer avatar"
-- "Develop my value proposition"
-- "Help me understand my market positioning"
-
-Claude will begin with an intake interview, asking five questions about your product, features, avatar, competitors, and research stage. After that, it runs the relevant modules automatically.
-
-### Running Individual Modules
-
-You can also request specific modules:
-
-- "Run Module 0: Competitor Research"
-- "Run Module 2: Avatar profiling"
-- "Just do the value proposition development"
-
-### Example Output
-
-A full research run for a SaaS product produces a single markdown file with approximately 300-350 lines covering all eight deliverables. Each module uses tables for structured data and concise prose for strategic narrative.
+- "Research my product" runs the B2B intake.
+- "Map the buying committee for our analytics platform" runs Module 2.
+- "Build launch positioning for our biologic" runs the pharma intake.
+- "Do a therapeutic landscape for [indication]" runs Module P0.
 
 ## Repository Structure
 
 ```
-marketing-research-skill/
-├── README.md                          # This file
-├── LICENSE                            # Apache 2.0
+claude-marketing-research-skill/
+├── README.md
+├── LICENSE                              # Apache 2.0
 ├── marketing-research/
-│   └── SKILL.md                       # The skill file (this is the only required file)
+│   ├── SKILL.md                         # Intake, track routing, B2B modules
+│   └── references/
+│       └── pharma-commercial.md         # Pharma track, loaded when needed
 ├── examples/
-│   └── sample-output.md               # Example of a full research run
-├── scripts/
-│   └── install.sh                     # Quick install script
-└── .gitignore
+│   ├── sample-output.md                 # B2B sample
+│   └── sample-output-pharma.md          # Pharma sample
+└── scripts/
+    └── install.sh
 ```
-
-## How It Works
-
-The skill uses a progressive disclosure system:
-
-1. **Metadata** (name + description): Always visible to Claude. Used to decide whether to load the skill.
-2. **SKILL.md body**: Loaded when the skill activates. Contains all module instructions, output format rules, and writing rules.
-
-Claude reads the instructions and follows them as a structured research workflow. It uses web search for competitor data and delivers each module as a formatted markdown file.
 
 ## Customizing
 
-Fork this repository and edit `marketing-research/SKILL.md` to customize:
-
-- **Writing rules**: Adjust tone, formatting, or length targets in the WRITING RULES section
-- **Module structure**: Add, remove, or reorder modules
-- **Output templates**: Modify the Avatar Profile, Positioning Canvas, or Comparison Table formats
-- **Mental models**: Add your own psychological or strategic frameworks to Module 5
-
-After editing, either re-upload the `.skill` file to Claude.ai or copy the updated `SKILL.md` to your Claude Code skills directory.
-
-## Building the .skill Package
-
-The `.skill` file is a ZIP archive containing the skill folder. To rebuild after editing:
-
-```bash
-cd marketing-research-skill
-zip -r marketing-research.skill marketing-research/
-```
-
-Or if you have the Anthropic skill packager:
-
-```bash
-python -m scripts.package_skill marketing-research/ ./
-```
-
-## Contributing
-
-Contributions welcome. Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-improvement`
-3. Edit `marketing-research/SKILL.md`
-4. Test by installing the modified skill and running a full research
-5. Submit a pull request with a description of what changed and why
-
-**Writing standards for contributions:**
-- Zero em dashes in the SKILL.md file
-- Minimal parenthetical content
-- Active voice throughout
-- Tables over prose for structured content
+- **Writing rules and modules:** edit `marketing-research/SKILL.md`.
+- **Pharma rules, stakeholders or KPIs:** edit `marketing-research/references/pharma-commercial.md`.
+- **New vertical:** add a file under `references/` and a row to the track table at the top of `SKILL.md`.
 
 ## License
 
-Apache 2.0. See [LICENSE](LICENSE) for details.
-
-## Credits
-
-Created by [Your Name]. Built with Claude by Anthropic.
-
-Follows the [Agent Skills](https://agentskills.io) open standard.
+Apache 2.0. See [LICENSE](LICENSE). Original work by [ishwarjha](https://github.com/ishwarjha). B2B and pharma adaptation by [kabir1888](https://github.com/kabir1888).

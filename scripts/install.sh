@@ -1,13 +1,13 @@
 #!/bin/bash
-# Install marketing-research skill for Claude Code
+# Install the marketing-research skill (B2B + pharma commercial) for Claude Code
 # Usage: ./install.sh [--project]
 
 set -e
 
 SKILL_NAME="marketing-research"
-REPO_URL="https://raw.githubusercontent.com/ishwarjha/marketing-research-skill/main"
+REPO_URL="https://raw.githubusercontent.com/kabir1888/claude-marketing-research-skill/main"
+FILES=("SKILL.md" "references/pharma-commercial.md")
 
-# Determine install location
 if [ "$1" = "--project" ]; then
     INSTALL_DIR=".claude/skills/$SKILL_NAME"
     echo "Installing as project skill in $INSTALL_DIR"
@@ -16,22 +16,23 @@ else
     echo "Installing as personal skill in $INSTALL_DIR"
 fi
 
-# Create directory
-mkdir -p "$INSTALL_DIR"
+mkdir -p "$INSTALL_DIR/references"
 
-# Download SKILL.md
-echo "Downloading SKILL.md..."
-curl -sSL "$REPO_URL/$SKILL_NAME/SKILL.md" -o "$INSTALL_DIR/SKILL.md"
+for f in "${FILES[@]}"; do
+    echo "Downloading $f..."
+    curl -fsSL "$REPO_URL/$SKILL_NAME/$f" -o "$INSTALL_DIR/$f"
+done
 
-# Verify
-if [ -f "$INSTALL_DIR/SKILL.md" ]; then
-    echo ""
-    echo "Installed successfully."
-    echo "Location: $INSTALL_DIR/SKILL.md"
-    echo ""
-    echo "To use: start a Claude Code session and say 'research my product'"
-    echo "To uninstall: rm -rf $INSTALL_DIR"
-else
-    echo "Installation failed. Please check your network connection and try again."
-    exit 1
-fi
+for f in "${FILES[@]}"; do
+    if [ ! -s "$INSTALL_DIR/$f" ]; then
+        echo "Installation failed: $f is missing. Check your network connection and try again."
+        exit 1
+    fi
+done
+
+echo ""
+echo "Installed successfully."
+echo "Location: $INSTALL_DIR"
+echo ""
+echo "To use: start a Claude Code session and say 'research my product' or 'build launch positioning for my drug'"
+echo "To uninstall: rm -rf $INSTALL_DIR"
